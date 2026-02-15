@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ximena Encantada 💎❤️</title>
+
+<!-- Fuente estilo Minecraft -->
+<link href="https://fonts.cdnfonts.com/css/minecraft" rel="stylesheet">
+
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo estilo Minecraft atardecer */
+body {
+    height: 100vh;
+    background: linear-gradient(to top, #ff7e5f, #feb47b, #87ceeb);
+    overflow: hidden;
+    font-family: 'Minecraft', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Texto principal estilo bloque */
+h1 {
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 3px 3px 0 #000, 6px 6px 0 #555;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 5px solid #d4af37; /* borde dorado tipo diamante */
+    border-radius: 15px;
+}
+
+/* Bloques de diamante animados */
+.diamond {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('https://i.imgur.com/qQ6kXQ1.png') no-repeat center/cover;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-40px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+
+/* Corazones flotando */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://i.imgur.com/7Q0t1gk.png') no-repeat center/cover;
+    animation: floatHeart 5s infinite ease-in-out;
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-60px) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(360deg); opacity: 0.7; }
+}
+
+/* Flores flotando */
+.flower {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url('https://i.imgur.com/4Wb5KzJ.png') no-repeat center/cover;
+    animation: floatFlower 7s infinite ease-in-out;
+}
+
+@keyframes floatFlower {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+<h1>Ximena Encantada 💎❤️</h1>
+
+<!-- Diamantes -->
+<div class="diamond" style="top: 20%; left: 10%;"></div>
+<div class="diamond" style="top: 40%; left: 80%;"></div>
+<div class="diamond" style="top: 70%; left: 30%;"></div>
+
+<!-- Corazones -->
+<div class="heart" style="top: 50%; left: 20%;"></div>
+<div class="heart" style="top: 30%; left: 60%;"></div>
+<div class="heart" style="top: 80%; left: 50%;"></div>
+
+<!-- Flores -->
+<div class="flower" style="top: 60%; left: 15%;"></div>
+<div class="flower" style="top: 25%; left: 70%;"></div>
+<div class="flower" style="top: 75%; left: 40%;"></div>
+
+</body>
+</html>
