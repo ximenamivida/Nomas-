@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creeper Boom</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.creeper {
+    width: 150px;
+    height: 150px;
+    background: #3cff00;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #00ff88;
+    transition: transform 0.2s;
+}
+
+.eye {
+    width: 25px;
+    height: 25px;
+    background: black;
+    position: absolute;
+    top: 30px;
+}
+
+.eye.left { left: 25px; }
+.eye.right { right: 25px; }
+
+.mouth {
+    width: 60px;
+    height: 50px;
+    background: black;
+    position: absolute;
+    bottom: 25px;
+    left: 45px;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0); }
+}
+
+.explosion {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, orange, red, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+}
+
+@keyframes boom {
+    0% { opacity: 1; transform: scale(0.2); }
+    100% { opacity: 0; transform: scale(3); }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💣 Toca dos veces al Creeper</h1>
+
+    <div class="creeper" id="creeper">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="mouth"></div>
+    </div>
+
+    <div class="explosion" id="explosion"></div>
+</div>
+
+<script>
+let creeper = document.getElementById("creeper");
+let explosion = document.getElementById("explosion");
+
+let lastTap = 0;
+
+creeper.addEventListener("click", function() {
+    let currentTime = new Date().getTime();
+    let tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+        explode();
+    }
+
+    lastTap = currentTime;
+});
+
+function explode() {
+    creeper.style.animation = "shake 0.3s infinite";
+
+    setTimeout(() => {
+        creeper.style.display = "none";
+
+        explosion.style.top = "50%";
+        explosion.style.left = "50%";
+        explosion.style.transform = "translate(-50%, -50%)";
+        explosion.style.animation = "boom 0.6s forwards";
+    }, 600);
+}
+</script>
+
+</body>
+  </html> 
