@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi personita especial</title>
+    <style>
+        :root {
+            --color-primario: #ffafbd;
+            --color-secundario: #ffc3a0;
+            --color-texto: #5d4037;
+            --color-acento: #ff6b6b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .contenedor {
+            background: rgba(255, 255, 255, 0.9);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 2px solid white;
+        }
+
+        h1 {
+            color: var(--color-acento);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo del "Reproductor de Música" */
+        .music-player {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .album-art {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #feb47b);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 5s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .song-info {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .song-title {
+            font-weight: bold;
+            display: block;
+            color: var(--color-texto);
+        }
+
+        .controls {
+            color: var(--color-acento);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Cuadro de texto */
+        .mensaje-box {
+            background: #fff9f9;
+            border-left: 5px solid var(--color-acento);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            line-height: 1.6;
+            color: var(--color-texto);
+            text-align: justify;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* Decoraciones */
+        .corazon {
+            position: absolute;
+            color: rgba(255, 107, 107, 0.3);
+            font-size: 20px;
+            z-index: 1;
+            animation: flotar 6s ease-in infinite;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .footer-nota {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Barra de scroll personalizada */
+        .mensaje-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        .mensaje-box::-webkit-scrollbar-thumb {
+            background: var(--color-primario);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'corazon';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            document.body.appendChild(heart);
+        }
+    </script>
+
+    <div class="contenedor">
+        <h1>Para ti, mi amor ❤️</h1>
+        
+        <div class="music-player">
+            <div class="album-art">🎵</div>
+            <div class="song-info">
+                <span class="song-title">Nuestra Canción Favorita</span>
+                <small>02:45 / 03:30</small>
+            </div>
+            <div class="controls">
+                <span>⏮ ● ⏭</span>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <svg viewBox="0 0 100 100" width="100" height="100">
+                <path fill="#ff6b6b" d="M50 88.7L43.1 82.3C18.6 60.1 2.5 45.5 2.5 27.5C2.5 12.8 14.1 1.2 28.8 1.2C37.1 1.2 45.1 5.1 50 11.2C54.9 5.1 62.9 1.2 71.2 1.2C85.9 1.2 97.5 12.8 97.5 27.5C97.5 45.5 81.4 60.1 56.9 82.3L50 88.7Z" />
+            </svg>
+        </div>
+
+        <div class="mensaje-box">
+            Querida amor, <br><br>
+            Hoy quería recordarte lo especial que eres para mí. Desde que llegaste a mi vida, cada pequeño detalle se ha vuelto más brillante y cada momento a tu lado es un tesoro que guardo con mucho cariño. Eres mi lugar seguro, esa sonrisa que me calma cuando el mundo se siente un poco caótico y la razón por la que siempre tengo un motivo para ser mejor.
+            <br><br>
+            Gracias por tu paciencia, por tus risas y por compartir conmigo este camino. No importa cuántos días pasen, siempre encuentro una nueva razón para admirarte. Eres increíble, inteligente y hermosa por dentro y por fuera. Espero que este pequeño detalle te saque una sonrisa, porque te mereces todo lo bonito de este universo y mucho más.
+            <br><br>
+            Te quiero hoy, mañana y siempre. Eres mi persona favorita.
+        </div>
+
+        <p class="footer-nota">Hecho con todo mi amor por ti ✨</p>
+    </div>
+
+</body>
+</html>
+ 
